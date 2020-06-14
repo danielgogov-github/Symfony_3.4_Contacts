@@ -1,0 +1,28 @@
+{% extends "contacts/base.html.twig" %}
+
+{% block content %}
+    {{ form_start(form) }}
+    <table>
+        <tr>
+            <td>{{ form_label(form.firstName) }}</td>
+            <td>{{ form_widget(form.firstName) }}</td>
+            <td>{{ form_errors(form.firstName) }}</td>
+        </tr>
+        <tr>
+            <td>{{ form_label(form.lastName) }}</td>
+            <td>{{ form_widget(form.lastName) }}</td>
+            <td>{{ form_errors(form.lastName) }}</td>
+        </tr>
+        <tr>
+            <td>{{ form_label(form.number) }}</td>
+            <td>{{ form_widget(form.number) }}</td>
+            <td>{{ form_errors(form.number) }}</td>
+        </tr>
+        <tr>
+            <td></td>
+            <td>{{ form_row(form.save) }}</td>
+            <td></td>
+        </tr>
+    </table>
+    {{ form_end(form) }}
+{% endblock %}

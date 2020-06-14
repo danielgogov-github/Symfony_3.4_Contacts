@@ -1,0 +1,22 @@
+{% extends "contacts/base.html.twig" %}
+
+{% block content %}
+<table>
+    <tr>
+        <th>Firstname</th>
+        <th>Lastname</th>
+        <th>Number</th>
+        <th>Created</th>
+    </tr>
+    {% for contact in allContacts %}
+        <tr>
+            <td>{{ contact.firstName }}</td>
+            <td>{{ contact.lastName }}</td>
+            <td>{{ contact.number }}</td>
+            <td>{{ contact.dateCreated | date('d-m-Y H:i') }}</td>
+            <td><a href="edit/{{ contact.id }}">Edit</a></td>
+            <td><a href="delete/{{ contact.id }}">Delete</a></td>
+        </tr>
+    {% endfor %}
+</table>
+{% endblock %}
